@@ -12,7 +12,7 @@ docker run -d --name=spotdl-shortcut \
 -e PLEX_TOKEN=<Plex Token> \
 -e PLEX_LIBRARY=<Plex Music Library Name> \
 -e PLEX_URL=<Plex Server URL> \
-nikorag/spotdl-shortcut
+nikorag/spotdl-shortcut:main
 ```
 
 ## Shortcut
