@@ -1,0 +1,23 @@
+<ul id="logList">
+    {{#each process.logs}}
+        <li class="{{level}}">{{message}}</li>
+    {{/each}}
+</ul>
+
+<script type="text/javascript">
+    const socket = io();
+
+    socket.on('log', function({processId, level, message}) {
+        if (processId === '{{processId}}') {
+            // Create a new <li> element
+            const newLogItem = document.createElement('li');
+            newLogItem.className = level;
+            newLogItem.textContent = message;
+
+            // Append the new <li> element to the existing <ul> list
+            const logList = document.getElementById('logList');
+            logList.appendChild(newLogItem);
+        }
+    });
+</script>
+        
